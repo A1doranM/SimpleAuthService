@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Game</title>
+    <script type="text/javascript" src="C:/Users/Admin/IdeaProjects/pointjs_0_0_6/point.js"></script>
+    <script type="text/javascript">
+        var wss;
+        var started = false;
+        var finished = false;
+
+        var myName = "${myName}";
+        var enemyName = "";
+        var pjs = new PointJS('2D', 400, 400);
+        pjs.system.initFullPage();
+        init = function () {
+            wss = new WebSocket("ws://localhost:8080/gameplay");
+
+            wss.onopen = function (event) {}
+
+            wss.onmessage = function (event) {
+            wss.onclose = function (event) {}
+        };
+
+        function sendMessage() {}
+
+    </script>
+</head>
+<body onload="init();">
+<div id="body">
+    <div id="hello">
+        <p>Hello, ${myName}!</p>
+    </div>
+
+    <div id="wait">
+        <p>Prepare yourself. Wait for enemy!</p>
+    </div>
+
+    <div id="gameplay" style="display: none">
+        <div id="score">
+            <p>${myName}: <span id="myScore">0</span></p>
+
+            <p><span id="enemyName"></span>: <span id="enemyScore">0</span></p>
+        </div>
+
+        <form name="gamePlay" action="">
+            <input type="button" name="submit" value="Press to win!" onclick="sendMessage();"/>
+        </form>
+    </div>
+
+    <div id="gameOver" style="display: none">
+        <p>Game over! You are <span id="win"></span></p>
+    </div>
+
+</div>
+</body>
+</html>
