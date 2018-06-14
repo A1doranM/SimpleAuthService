@@ -1,1 +1,2 @@
-# SimpleAuthService using Hibernate and Jetty server
+# SimpleAuthService 
+using Hibernate and Jetty server
